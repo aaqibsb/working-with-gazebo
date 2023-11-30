@@ -3,9 +3,9 @@
 <package format="3">
   <name>walker</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Simple Walker Algorithm for Turtlebot3</description>
   <maintainer email="aaqib.barodawala@gmail.com">dawn</maintainer>
-  <license>TODO: License declaration</license>
+  <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
