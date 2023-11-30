@@ -40,7 +40,7 @@ using LASER = sensor_msgs::msg::LaserScan;
 using TWIST = geometry_msgs::msg::Twist;
 
 /**
- * @brief A simple class to implement walker algorithm for turtlebot3. 
+ * @brief A simple class to implement walker algorithm for turtlebot3.
  * It uses the laser scan to get depth and move the robot accordingly.
  *
  */
