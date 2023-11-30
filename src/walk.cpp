@@ -52,13 +52,13 @@ class Walk : public rclcpp::Node {
    */
   Walk() : Node("walk") {
     auto cb = std::bind(&Walk::laserData_cb, this, _1);
-    laser_data_sub = this->create_subscription<LASER>("laser_scan", 10, cb);
+    laser_data_sub = this->create_subscription<LASER>("scan", 10, cb);
     pub_vel = this->create_publisher<TWIST>("cmd_vel", 10);
   }
 
  private:
   /**
-   * @brief Gets the laser scan data
+   * @brief Get the Laser Scan data
    *
    * @param scanData
    */
@@ -78,8 +78,8 @@ class Walk : public rclcpp::Node {
   }
 
   /**
-   * @brief gives the commands to move the robot as per the laser scan data
-   *
+   * @brief Publishes velocity commands as per the distance (0.8)
+   * read by the laser scan data
    * @param x_vel
    * @param z_vel
    */
@@ -90,7 +90,7 @@ class Walk : public rclcpp::Node {
     pub_vel->publish(vel_msg);
   }
 
-  // Declaring the private variables
+  // Declaring private variables
   rclcpp::Subscription<LASER>::SharedPtr laser_data_sub;
   rclcpp::Publisher<TWIST>::SharedPtr pub_vel;
   rclcpp::TimerBase::SharedPtr timer;
